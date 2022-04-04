@@ -69,11 +69,6 @@ def stap1():
         print("Sorry dat is geen optie die we aanbieden...\n")
         stap1()
 
-
-
-
-
-
 def begin():
     a = input("Ben u A. particulier of B. zakelijk? : ")
     if a == 'A'.lower():
@@ -123,22 +118,22 @@ def bonnetje(aantalbollen, BakjeOfHorentje, topping):
     elif BakjeOfHorentje == 'horentje':
         print("horentje         1 x €",ymlimport["hoorentjes"],"    =",1*ymlimport["hoorentjes"])
     if topping == 'slagroom':
-        print("topping          1 x €",ymlimport["slagroom"],"    =",(1*ymlimport["slagroom"]))
-        print("                              ------- +\ntotaal                        =",(aantalbollen * 0,95 + 1.25 + ymlimport["slagroom"]) )
+        print("topping          1 x €",ymlimport["toppings"]["slagroom"],"    =",(1*ymlimport["toppings"]["slagroom"]))
+        print("                              ------- +\ntotaal                        =",(aantalbollen * 0,95 + 1.25 + ymlimport["toppings"]["slagroom"]) )
     elif topping == 'Sprinkels':
-        print("topping          1 x €",ymlimport["sprinkels"],"    =",(1*ymlimport["sprinkels"]))
-        print("                              ------- +\ntotaal                        =",(aantalbollen * 0,95 + 1.25 + ymlimport["sprinkels"]) )
+        print("topping          1 x €",ymlimport["toppings"]["sprinkels"],"    =",(1*ymlimport["toppings"]["sprinkels"]))
+        print("                              ------- +\ntotaal                        =",(aantalbollen * 0,95 + 1.25 + ymlimport["toppings"]["sprinkels"]) )
     elif topping == 'Caramel Saus':
-        print("topping          1 x €",ymlimport["caramel"]
-        ,"    =",(1*ymlimport["caramel"]))
-        print("                              ------- +\ntotaal                        =",(aantalbollen * 0,95 + 1.25 + ymlimport["caramel"]) )
+        print("topping          1 x €",ymlimport["toppings"]["caramel"]
+        ,"    =",(1*ymlimport["toppings"]["caramel"]))
+        print("                              ------- +\ntotaal                        =",(aantalbollen * 0,95 + 1.25 + int(ymlimport["toppings"]["caramel"]) ))
 
 def bonnetje2(liters):
     som = (float(liters) * 9.80)
     print("---------------","papi-gelato","---------------\n")
-    print(liters + ". Liter         "+ liters + "x €9,80    =", (float(liters) * 9.80))
+    print(liters + ". Liter         "+ liters + "x €",ymlimport["liter"],   "    =", (float(liters) * ymlimport["liter"]))
     print("                               ------- +\ntotaal                        =", som)
-    print("BTW (9%)                      =", som/100*6)
+    print("BTW (",ymlimport["btw"],")                      =", som/100*ymlimport["btw"])
     print("Bedankt en tot ziens!")
     
 print("*\n*Welkom bij Papi Gelato.\n*")
